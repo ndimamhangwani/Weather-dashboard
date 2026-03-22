@@ -20,5 +20,7 @@ Fetches live weather data using the Open-Meteo API.
 - Chaining two API calls in sequence
 ## Built at
 TechBridle Foundation, Software Development Cohort 2026
+
 Module 2, Lesson 3: Async JavaScript
+
 Built by: Ndima Mhangwani
