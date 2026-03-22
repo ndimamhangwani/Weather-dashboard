@@ -80,3 +80,34 @@ const displayWeather = (location, weather) =>{
     weatherCard.style.display = 'block';
     console.log('Done')
 };
+
+//Step 5: searchWeather(city) async function
+
+const searchWeather = async (city) =>{
+
+    try {
+        
+   
+// It resets the UI
+errorDiv.textContent = '';
+weatherCard.style.display = 'none';
+statusDiv.textContent = 'Loading...'; // I put loading for user experience
+
+//Awaits getCoordinates
+const location = await getCoordinates(city);
+
+// awaits getWeather
+const weather = await getWeather(location.lat, location.lon);
+
+// calls displayWeather
+displayWeather(location, weather);
+
+//Shows a status message
+statusDiv.textContent = '';
+
+// handles error in a catch block
+} catch (error) {
+        statusDiv.textContent = '';
+        errorDiv.textContent = error.message;
+    }
+};
