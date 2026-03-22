@@ -48,3 +48,21 @@ country: place.country
 };
 
 };
+
+// Step 3: Get weather(lat, lon) async function
+//Fetches API 2
+
+const getWeather = async (lat, lon) => {
+    console.log('Fetching weather...');
+  const res = await fetch(
+    `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`
+  );
+// checks the response.ok
+if (!res.ok) {
+    throw new Error('Failed to fetch weather');
+    }
+// To return the data.current_weather when the api is found
+const data = await res.json();
+return data.current_weather;
+
+};
