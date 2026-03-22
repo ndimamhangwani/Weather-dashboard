@@ -111,3 +111,24 @@ statusDiv.textContent = '';
         errorDiv.textContent = error.message;
     }
 };
+
+
+// Step 6: Adding a form submit event listener
+
+// Call searchWeather
+
+form.addEventListener('submit', (e) => {
+// Use preventDefault
+e.preventDefault();
+
+// Validate empty input
+const city = input.value.trim();
+
+if(!city) {
+    errorDiv.textContent = 'Please enter a city name';
+    return;
+}
+searchWeather(city);
+});
+
+searchWeather('Johannesburg');
