@@ -1,56 +1,35 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-  <meta charset="UTF-8"> 
-  <title>Weather Dashboard</title> 
-  <style> 
-    * { box-sizing: border-box; margin: 0; padding: 0; } 
-    body { font-family: Arial, sans-serif; padding: 20px; background: #f0f2f5; 
-} 
-    h1 { color: #8B0000; margin-bottom: 20px; } 
-    #search-form { display: flex; gap: 10px; margin-bottom: 16px; } 
-    #city-input { padding: 10px; font-size: 16px; width: 260px; 
-                  border: 1px solid #ccc; border-radius: 4px; } 
-    #search-btn { padding: 10px 20px; background: #8B0000; color: white; 
-                  border: none; border-radius: 4px; cursor: pointer; font-size: 
-16px; } 
-    #search-btn:hover { background: #a00000; } 
-    #status { color: #666; font-style: italic; min-height: 24px; margin-bottom: 
-8px; } 
-    #error-msg { color: #cc0000; font-weight: bold; margin-bottom: 8px; } 
-    #weather-card { display: none; background: white; border-radius: 8px; 
-                    padding: 24px; max-width: 400px; 
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.1); } 
-    #weather-card h2 { color: #8B0000; margin-bottom: 16px; } 
-    .row { display: flex; justify-content: space-between; 
-           padding: 8px 0; border-bottom: 1px solid #eee; font-size: 16px; } 
-    .row:last-child { border-bottom: none; } 
-    .label { color: #666; } 
-    .value { font-weight: bold; } 
-  </style> 
-</head> 
-<body> 
-  <h1>🌤 Weather Dashboard</h1> 
-  <form id="search-form"> 
-    <input type="text" id="city-input" placeholder="Enter a city name..."> 
-    <button type="submit" id="search-btn">Get Weather</button> 
-  </form> 
-  <div id="status"></div> 
-  <div id="error-msg"></div> 
-  <div id="weather-card"> 
-    <h2 id="city-name"></h2> 
-    <div class="row"> 
-      <span class="label">Temperature</span> 
-      <span class="value" id="temp"></span> 
-    </div> 
-    <div class="row"> 
-      <span class="label">Wind Speed</span> 
-      <span class="value" id="wind"></span> 
-    </div> 
-    <div class="row"> 
-      <span class="label">Condition</span> 
-      <span class="value" id="condition"></span> 
-    </div> 
-  </div> 
-  <script src="weather.js"></script> 
-</body> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+ <title>Weather Dashboard</title>
+ 
+</head>
+<body>
+ <h1>🌤 Weather Dashboard</h1>
+ <form id="search-form">
+ <input type="text" id="city-input" placeholder="Enter a city name...">
+ <button type="submit" id="search-btn">Get Weather</button>
+ </form>
+ <div id="status"></div>
+ <div id="error-msg"></div>
+ <div id="weather-card">
+ <h2 id="city-name"></h2>
+ <div class="row">
+ <span class="label">Temperature</span>
+ <span class="value" id="temp"></span>
+ </div>
+ <div class="row">
+ <span class="label">Wind Speed</span>
+ <span class="value" id="wind"></span>
+ </div>
+ <div class="row">
+ <span class="label">Condition</span>
+ <span class="value" id="condition"></span>
+ </div>
+ </div>
+ <script src="weather.js"></script>
+</body>
+</html>
