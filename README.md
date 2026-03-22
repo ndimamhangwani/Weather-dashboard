@@ -7,7 +7,7 @@ Fetches live weather data using the Open-Meteo API.
 - Loading state and error handling
 - Auto-loads Johannesburg on startup
 ## Tech Used
-- HTML & CSS
+- HTML5 & CSS3
 - Vanilla JavaScript (ES6+)
 - Async/Await
 - Fetch API
