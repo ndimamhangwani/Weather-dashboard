@@ -8,3 +8,15 @@ const cityNameEl = document.querySelector('#city-name');
 const tempEl = document.querySelector('#temp');
 const windEl = document.querySelector('#wind');
 const conditionEl = document.querySelector('#condition');
+
+const getCondition = (code) => {
+ if (code === 0) return '☀️ Clear sky';
+ if (code <= 3) return '⛅ Partly cloudy';
+ if (code <= 48) return '🌫 Foggy';
+ if (code <= 55) return '🌦 Drizzle';
+ if (code <= 65) return '🌧 Rain';
+ if (code <= 75) return '🌨 Snow';
+ if (code <= 82) return '🌧 Showers';
+ if (code === 95) return '⛈ Thunderstorm';
+ return `Code ${code}`;
+};
