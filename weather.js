@@ -20,3 +20,31 @@ const getCondition = (code) => {
  if (code === 95) return '⛈ Thunderstorm';
  return `Code ${code}`;
 };
+
+// Step 2: write a getCoordinates(city) async function
+//It fetches API 1
+const getCoordinates = async (city) =>{
+    const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}`);
+console.log('Searching...');
+// checks the response.ok
+if (!res.ok) {
+    throw new Error('Failed to fectch location');
+}
+// data.results is not empty
+const data = await res.json();
+
+if (!data.results || data.results.length === 0) {
+    throw new Error('City was not found'); // If data.results is empty or undefined -> city was not found error
+}
+//Data that response when a city have been found
+const place = data.results[0]; 
+console.log(`Found: ${place.name}`);
+
+return{
+lat: place.latitude,
+lon: place.longitude,
+name: place.name,
+country: place.country
+};
+
+};
