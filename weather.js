@@ -66,3 +66,17 @@ const data = await res.json();
 return data.current_weather;
 
 };
+//Step 4: Display weather(location, weather) function
+//It sets the textContext of each DOM element
+//It shows the #weather-card
+
+const displayWeather = (location, weather) =>{
+    cityNameEl.textContent = `${location.name}, ${location.country}`;
+    tempEl.textContent = `${weather.temperature}°C`;
+    windEl.textContent = `Wind: ${weather.windspeed} km/h`;
+    conditionEl.textContent = getCondition(weather.weathercode);
+
+    // Using style/ css inside js to style the weather card to be block
+    weatherCard.style.display = 'block';
+    console.log('Done')
+};
